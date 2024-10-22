@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+​
+</head>
+<body>
+<div class="slider">
+  <img id="img-1" src="https://imgs.search.brave.com/20KU_VHIyvi5dkVkoNI1wKqwWuNN0cwKz0E-UuRS2bo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9lbGVt/ZW50cy1yZXNpemVk/LmVudmF0b3VzZXJj/b250ZW50LmNvbS9l/bGVtZW50cy12aWRl/by1jb3Zlci1pbWFn/ZXMvZmlsZXMvMzE2/MDMxOTc1LzE5MjB4/MTA4MC5qcGc_dz01/MDAmaD0yODEmY2Zf/Zml0PWNvdmVyJnE9/ODUmZm9ybWF0PWF1/dG8mcz05MmUwYzA4/MmE4YmMyOGM2NGJi/MTk2MmNmMGQyZjg2/ODAyOGYxZjgyNmMz/ZmNmZWUyYTU2MjJj/Mjg4MmRlYmZj" alt="Image 1"/>
+  <img id="img-2" src="https://imgs.search.brave.com/O77Iw1UIF3cSbM5b1SFJsYSwDzHNTBvnivyNnDP0tHo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtcGxhdGZvcm0u/OTlzdGF0aWMuY29t/Ly8xYWRCcUs1TVFz/N290dXBJTkpZUE5k/dWNlbmM9LzE5OHgx/NzY6NzY1eDc0My9m/aXQtaW4vNTAweDUw/MC85OWRlc2lnbnMt/Y29udGVzdHMtYXR0/YWNobWVudHMvODEv/ODEwMzYvYXR0YWNo/bWVudF84MTAzNjg4/MA.jpeg" alt="Image 2"/>
+  <img id="img-3" src="https://imgs.search.brave.com/RAIcpHmuMDo-ACALHpl0_awWcP3xTuSF_opZDyhFRHs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA4LzA2LzU5Lzk3/LzM2MF9GXzgwNjU5/OTc5MV8xc3owcHlp/dFBjc283bFFFSEIy/NVhXbFdZWHJLaDJu/US5qcGc" alt="Image 3"/>
+</div>
+<div class="navigation-button">
+  <span class="dot active" onclick="changeSlide(0)"></span>
+  <span class="dot" onclick="changeSlide(1)"></span>
+  <span class="dot" onclick="changeSlide(2)"></span>
+</div>
+<script src="ja.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 40%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img id="img-1" src="data:image/png;base64,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" alt="Image 1" /></div>
+      <div class="swiper-slide"><img id="img-2" src="https://imgs.search.brave.com/O77Iw1UIF3cSbM5b1SFJsYSwDzHNTBvnivyNnDP0tHo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtcGxhdGZvcm0u/OTlzdGF0aWMuY29t/Ly8xYWRCcUs1TVFz/N290dXBJTkpZUE5k/dWNlbmM9LzE5OHgx/NzY6NzY1eDc0My9m/aXQtaW4vNTAweDUw/MC85OWRlc2lnbnMt/Y29udGVzdHMtYXR0/YWNobWVudHMvODEv/ODEwMzYvYXR0YWNo/bWVudF84MTAzNjg4/MA.jpeg" alt="Image 2"/></div>
+      <div class="swiper-slide"><img id="img-3" src="https://imgs.search.brave.com/RAIcpHmuMDo-ACALHpl0_awWcP3xTuSF_opZDyhFRHs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA4LzA2LzU5Lzk3/LzM2MF9GXzgwNjU5/OTc5MV8xc3owcHlp/dFBjc283bFFFSEIy/NVhXbFdZWHJLaDJu/US5qcGc" alt="Image 3"/></div>
+      <div class = "swiper-slide"><img id="img-1" src="https://imgs.search.brave.com/20KU_VHIyvi5dkVkoNI1wKqwWuNN0cwKz0E-UuRS2bo/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9lbGVt/ZW50cy1yZXNpemVk/LmVudmF0b3VzZXJj/b250ZW50LmNvbS9l/bGVtZW50cy12aWRl/by1jb3Zlci1pbWFn/ZXMvZmlsZXMvMzE2/MDMxOTc1LzE5MjB4/MTA4MC5qcGc_dz01/MDAmaD0yODEmY2Zf/Zml0PWNvdmVyJnE9/ODUmZm9ybWF0PWF1/dG8mcz05MmUwYzA4/MmE4YmMyOGM2NGJi/MTk2MmNmMGQyZjg2/ODAyOGYxZjgyNmMz/ZmNmZWUyYTU2MjJj/Mjg4MmRlYmZj" alt="Image 1"/></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
+</html>
